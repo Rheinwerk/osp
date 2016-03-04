@@ -1,0 +1,8 @@
+---
+- hosts: monitors
+  become: Yes
+  vars_files:
+    - vars/secrets.yml
+  roles:
+    - { role: grafana, tags: [ 'grafana' ], _base: "{{ GRAFANA }}" }
+
