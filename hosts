@@ -1,2 +1,6 @@
+# Hosts from which special administrative tasks may be run
+[admins]
+
+# Hosts used for processing and presenting monitoring information
 [monitors]
 
