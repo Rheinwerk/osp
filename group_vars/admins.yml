@@ -1,0 +1,18 @@
+---
+MYSQL_USERS:
+  host: db.baremetal.{{ SITE.domain }}
+  root:
+    password: "{{ S_MYSQL_USERS.admin.password }}"
+  users:
+    grafana:
+      state: present
+      name: grafana
+      password: "{{ S_MYSQL_USERS.users.grafana.password }}"
+      privileges: "grafana.*:ALL,GRANT"
+      hosts:
+        - "%.baremetal.{{ SITE.domain }}"
+  databases:
+    grafana:
+      name: grafana
+      state: present
+
