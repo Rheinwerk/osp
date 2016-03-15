@@ -1,0 +1,4 @@
+---
+SITE:
+  # ATTENTION: This is an invalid domain! Change this to a valid domain name before you start to deploy OSP.
+  domain: cluster-1.rheinwerk.org.unknown

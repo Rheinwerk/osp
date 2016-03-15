@@ -1,4 +1,11 @@
 ---
+- hosts: admins
+  vars_files:
+    - vars/secrets.yml
+  roles:
+    # The guard ensures that this role is executed only once -- cf. http://docs.ansible.com/ansible/playbooks_delegation.html#run-once
+    - { role: mysql_users, tags: [ 'mysql_users' ], _mysql: "{{ MYSQL_USERS }}", when: "{{ inventory_hostname == groups['admins'][0] }}" }
+
 - hosts: monitors
   become: Yes
   vars_files:
