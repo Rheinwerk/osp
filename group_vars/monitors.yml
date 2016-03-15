@@ -11,13 +11,13 @@ GRAFANA:
       cert_file:
       cert_key:
     database:
-      type: sqlite3
-      host_port: 127.0.0.1:3306
-      db_name: grafana
-      db_user: root
-      db_password:
+      type: mysql
+      host_port: db.baremetal.{{ SITE.domain }}:3306
+      db_name: "{{ MYSQL_USERS.databases.grafana.name }}"
+      db_user: "{{ MYSQL_USERS.users.grafana.name }}"
+      db_password: "{{ MYSQL_USERS.users.grafana.password }}"
       ssl_mode: disabled
-      path: grafana.db
+      path:
     security:
       admin_user: admin
       admin_password: admin
