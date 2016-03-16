@@ -1,5 +1,8 @@
 - src: Rheinwerk.grafana
   name: grafana
+  version: v0.1.0
+
 - src: Rheinwerk.mysql_users
   name: mysql_users
+  version: v0.1.0
 

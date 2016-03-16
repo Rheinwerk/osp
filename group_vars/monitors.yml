@@ -42,4 +42,11 @@ GRAFANA:
       name: grafana
       version: 2.6.0
     upgrade: no
+  plugins:
+    install: True
+    plugins:
+      - filename: grafana.zip
+        type: datasource
+        zip_base_dir: grafana-plugins-master/datasources
+        url: https://github.com/grafana/grafana-plugins/archive/master.zip
 
